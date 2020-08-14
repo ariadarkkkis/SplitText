@@ -36,11 +36,13 @@ namespace SplitTextByDelimiter
                 var useSplit = Console.ReadLine().ToLower();
                 if (useSplit == "y")
                 {
+                    Console.Write("Enter delimiter: ");
+                    delimiter = Console.ReadLine();
                     Splitter(file, delimiter);
                 }
                 else
                 {
-                    File.WriteAllText("file1.txt", String.Join(Environment.NewLine, file.Distinct()));
+                    File.WriteAllText("dupsRemoved.txt", String.Join(Environment.NewLine, file.Distinct()));
                 }
                 
             }
