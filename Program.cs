@@ -44,21 +44,14 @@ namespace SplitTextByDelimiter
                 }
                 
             }
-            //var list = new List<(string user, string pass)>(); //Tuple
-            
         }
         public static void Splitter(string[] file, string delimiter)
         {
             var list1 = new List<string>();
             var list2 = new List<string>();
-            //var delimiter = ";";
 
             foreach (string line in file)
             {
-                // if (args.Length > 1)
-                // {
-                //     delimiter = args[1];
-                // }
                 var splited = line.Split(delimiter, 2);
                 if (splited.Length > 0 && !string.IsNullOrWhiteSpace(splited[0]))
                     list1.Add(splited[0]);
