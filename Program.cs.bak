@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SplitTextByDelimiter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string fileName;
+            if (args.Length == 0)
+            {
+                Console.Write("Enter file name: ");
+                fileName = Console.ReadLine();
+            }
+            else
+            {
+                fileName = args[0];
+            }
+            string[] file = File.ReadAllLines(fileName);
+            //var list = new List<(string user, string pass)>(); //Tuple
+            var listUser = new List<string>();
+            var listPass = new List<string>();
+            var delimiter = ";";
+
+            foreach (string line in file)
+            {
+                if (args.Length > 1)
+                {
+                    delimiter = args[1];
+                }
+                var splited = line.Split(delimiter, 2);
+                if (splited.Length > 0 && !string.IsNullOrWhiteSpace(splited[0]))
+                    listUser.Add(splited[0]);
+
+                if (splited.Length > 1 && !string.IsNullOrWhiteSpace(splited[1]))
+                    listPass.Add(splited[1]);
+                
+            }
+
+            File.WriteAllText("user.txt", String.Join(Environment.NewLine, listUser.Distinct()));
+            File.WriteAllText("pass.txt", String.Join(Environment.NewLine, listPass.Distinct()));
+        }
+    }
+}
