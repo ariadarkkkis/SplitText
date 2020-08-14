@@ -16,3 +16,9 @@ If you want to split by a specific delimiter, use the code below:
 or if you just want to remove duplicates, just enter the filename and say `n` to split question:
 
 `dotnet run "filename.txt"`
+
+# Credits
+
+[Alirezanet](https://github.com/Alirezanet)
+
+Thanks to my friends for helping me out
