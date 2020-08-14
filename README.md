@@ -18,6 +18,7 @@ or if you just want to remove duplicates, just enter the filename and say `n` to
 `dotnet run "filename.txt"`
 
 # Credits
-Thanks to my friends for helping me out
 
 [Alirezanet](https://github.com/Alirezanet)
+
+Thanks to my friends for helping me out
